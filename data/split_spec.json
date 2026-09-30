@@ -1,0 +1,25 @@
+{
+  "dataset": "CIFAR-10 torchvision official archive",
+  "seed": 16720,
+  "class_order": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "standard": {
+    "train_source": "official training split",
+    "train_per_class": 2500,
+    "validation_source": "official training split",
+    "validation_per_class": 500,
+    "test_source": "complete official test split"
+  },
+  "selection_algorithm": "For class c, permute its official indices with numpy.default_rng(16720+c). Training uses offsets [0,2500); validation uses [2500,3000). Sort the combined selected indices before creating Subset objects.",
+  "generator": "data/generate_splits.py"
+}

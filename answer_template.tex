@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs,graphicx}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+\setlist{leftmargin=*,itemsep=0.35em,topsep=0.35em}
+
+\newcommand{\studentname}{Your name}
+\newcommand{\andrewid}{Your Andrew ID}
+\newcommand{\collaborators}{List collaborators or write ``None''}
+\newcommand{\response}{\textcolor{blue}{\emph{Replace this text with your response.}}}
+\newcommand{\answerheading}[3]{%
+  \section*{#1: #2 \hfill [#3 points]}
+  \label{pa2:#1}
+  \hrule
+  \vspace{0.5em}
+}
+\newcommand{\firstanswersection}[3]{\answerheading{#1}{#2}{#3}}
+\newcommand{\answersection}[3]{\clearpage\answerheading{#1}{#2}{#3}}
+\newcommand{\subanswer}[1]{\textbf{#1}\quad\response\par}
+\newcommand{\evidencebox}[1]{%
+  \begin{center}
+  \fcolorbox{black}{gray!8}{%
+    \parbox[c][1.35in][c]{0.9\linewidth}{\centering
+      \textcolor{blue}{\emph{Insert #1 here.}}}}
+  \end{center}
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries 16-720 Computer Vision, Fall 2026}\\[0.35em]
+  {\large\bfseries Programming Assignment 2 Written Responses}
+\end{center}
+
+\begin{tabular}{@{}ll@{}}
+\textbf{Name:} & \studentname \\
+\textbf{Andrew ID:} & \andrewid \\
+\textbf{Collaborators:} & \collaborators
+\end{tabular}
+
+\firstanswersection{A1}{Softmax cross-entropy from first principles}{9}
+\subanswer{A1.1}
+\subanswer{A1.2}
+\subanswer{A1.3}
+\subanswer{A1.4}
+\subanswer{A1.5}
+
+\answersection{A2}{Work through one prediction by hand}{5}
+\subanswer{A2.1}
+\subanswer{A2.2}
+\subanswer{A2.3}
+\subanswer{A2.4}
+
+\answersection{A3}{Convolutional accounting and receptive fields}{6}
+\subanswer{A3.1}
+\subanswer{A3.2}
+\subanswer{A3.3}
+\subanswer{A3.4}
+
+\answersection{A4}{Residual paths and the post-addition gate}{5}
+\subanswer{A4.1}
+\subanswer{A4.2}
+\subanswer{A4.3}
+\subanswer{A4.4}
+
+\answersection{B1}{Read the pipeline}{5}
+\subanswer{B1-Q1}
+\subanswer{B1-Q2}
+\subanswer{B1-Q3}
+\subanswer{B1-Q4}
+\subanswer{B1-Q5}
+
+\answersection{B2}{Residual classifier}{14}
+\textbf{Implementation and exact shape/parameter trace.}\par
+\response
+\evidencebox{the shape trace, exact parameter count, first-layer filters, and two-stage feature maps}
+
+\answersection{B3}{Training and evaluation}{9}
+\textbf{Configuration, checkpoint rule, and final metrics.}\par
+\response
+\evidencebox{training/validation curves and the row-normalized test confusion matrix}
+
+\answersection{B4}{Representations and nearest neighbors}{7}
+\textbf{Representation contracts and neighborhood interpretation.}\par
+\response
+\evidencebox{common-query raw-pixel, random-network, and trained-network neighbor panels}
+
+\answersection{C1}{Controlled representation comparison}{6}
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Representation} & \textbf{Test accuracy} & \textbf{Macro recall} \\
+\midrule
+HOG & & \\
+Random TinyResNet & & \\
+Trained TinyResNet & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\response
+\evidencebox{the common-query retrieval comparison and per-class recall evidence}
+
+\answersection{C2}{Nuisance and shortcut stress tests}{5}
+\textbf{Three prior predictions, four-severity results, and explanation.}\par
+\response
+\evidencebox{the three sweeps and representative success/failure cases}
+
+\answersection{C3}{Residual connection and failure diagnosis}{4}
+\textbf{Residual-versus-plain result and A4 revisit.}\par
+\response
+\textbf{Confident-error evidence; separate observation from speculation.}\par
+\response
+\evidencebox{the error, nearest embeddings, and classifier-weight CAM labeled as correlational}
+
+\answersection{D1}{Choose and document a visual world}{4}
+\textbf{Categories, ambiguity, capture/provenance policy, and fixed split.}\par
+\response
+\evidencebox{representative category examples and manifest summary}
+
+\answersection{D2}{Adapt a pretrained representation}{7}
+\textbf{Frozen extractor, adaptation method, substantive decision, and held-out protocol.}\par
+\response
+\evidencebox{held-out predictions/scores and the before/after decision evidence}
+
+\answersection{D3}{Recognition Atlas and Hero Result}{11}
+\textbf{Submitted filenames, offline format, and viewing guide.}\par
+\response
+\textbf{Success, informative failure, intervention, and honest limitation.}\par
+\response
+\evidencebox{the legible static Hero panel}
+
+\answersection{D4}{AI-comprehension reflection}{3}
+\textbf{150--250 words. Follow either the permitted-AI or no-AI path in the specification.}\par
+\response
+
+\answersection{E}{Optional extension}{0--10}
+Delete this page if you are not submitting an extension. Otherwise state what is beyond the required work, what evidence supports it, and whether you affirmatively opt into the public showcase. The extension and showcase share one 10-point cap.
+
+\response
+\evidencebox{optional-extension evidence}
+
+\answersection{Acknowledgments}{Collaboration, resources, data, weights, and AI use}{0}
+\textbf{Outside sources, conventional software documentation, data, and pretrained weights.}\par
+\response
+
+\textbf{Permitted generative-AI use.} List tool, permitted section, purpose, and verification, or write ``None.''\par
+\response
+
+\textbf{Submission audit.}
+\begin{itemize}[label=$\square$]
+  \item Every required plot appears here and has generating code in the notebook.
+  \item Every PDF page is assigned to its matching Gradescope item.
+  \item The submitted notebook executes in order from a clean runtime.
+  \item The checkpoint contains only a state dictionary and documented metadata.
+  \item The Recognition Atlas works offline and the manifest contains no private metadata.
+  \item The Hero panel and all required files use the requested names and size limits.
+  \item Extra credit, including showcase participation, stays within the 10-point combined cap.
+\end{itemize}
+
+\end{document}
